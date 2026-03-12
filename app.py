@@ -29,6 +29,17 @@ print("TF-IDF Accuracy:", tfidf_acc)
 print("Sentence-BERT Accuracy:", bert_acc)
 
 
+# ----------------------------
+# Semantic Search Feature
+# 
+from src.semantic_search import SemanticSearch
+search_engine = SemanticSearch(q1_list)
+query = input("Enter a question to search: ")
+results = search_engine.search(query)
+print("\nMost similar questions:")
+for r in results:
+    print("-", r)
+
 ## Interactive Test
 
 while True:
