@@ -40,3 +40,9 @@ while True:
         print("Duplicate question")
     else:
         print("Different question")
+
+
+from src.evaluation import plot_confusion_matrix
+
+plot_confusion_matrix(y_test, tfidf_pred, "TF-IDF Confusion Matrix")
+plot_confusion_matrix(y_test, transformer_pred, "Sentence-BERT Confusion Matrix")
