@@ -1,9 +1,9 @@
 from src.tfidf_model import TfidfBaseline
 from src.transformer_model import TransformerSimilarity
 from src.evaluation import evaluate
-
+from src.preprocessing import load_data
 print('\nLoading Dataset')
-x_train,x_test,y_train,y_test,q1_train,q1_test,q2_train,q2_test=load_data("data/quora_sample.csv")
+x_train,x_test,y_train,y_test,q1_train,q1_test,q2_train,q2_test=load_data("data/questions.csv")
 
 
 ## TF-IDF TIMELINE
@@ -34,6 +34,7 @@ print("Sentence-BERT Accuracy:", bert_acc)
 while True:
     q1=input("\nEnter question 1:")
     q2=input("Enter question 2:")
+    sim = transformer_model.similarity(q1, q2)
     print("Similarity score",sim)
     if sim>0.7:
         print("Duplicate question")
