@@ -4,6 +4,7 @@ from src.evaluation import evaluate
 from src.preprocessing import load_data
 print('\nLoading Dataset')
 x_train,x_test,y_train,y_test,q1_train,q1_test,q2_train,q2_test=load_data("data/questions.csv")
+q1_list = X_test_q1.tolist()
 
 
 ## TF-IDF TIMELINE
