@@ -11,7 +11,7 @@ class TfidfBaseline:
         x_train_vec=self.vectorizer.fit_transform(x_train)
         self.model.fit(x_train_vec,y_train)
 
-    def predict(Self,x_test):
+    def predict(self,x_test):
         x_test_vec=self.vectorizer.transform(x_test)
         return self.model.predict(x_test_vec)
         
